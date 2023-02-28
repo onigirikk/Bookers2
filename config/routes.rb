@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   
   get 'homes/about' => 'homes#about', as: 'about'
   get 'books/new'
-  post 'book' =>'books#create'
+  post 'books' => 'books#create'
   
 end
