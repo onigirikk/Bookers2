@@ -12,6 +12,8 @@
 
   <body>
      <header>
+       <a href="/">Bookers</a>
+       
     <% if user_signed_in? %>
     
       <li>
@@ -42,5 +44,9 @@
     <% end %>
   </header>
     <%= yield %>
+    <footer>
+      <p>CopyRight Infratop.inc</p>
+    </footer>
   </body>
+
 </html>
