@@ -13,12 +13,15 @@
    
    <h1>Editing Book</h1>
 
-<%= form_with model: @books do |f| %>
-      <h4>Title</h4>
-      <%= f.text_field :title %>
-      <h4>Opinion</h4>
-      <%= f.text_area :body %><br>
+  <%= form_with model: @books do |f| %>
+   <h7>Title</h7><br>
+   <%= f.text_field :title %><br>
+   <h7>Opinion</h7><br>
+   <%= f.text_area :body %><br>
  
-<%= f.submit 'Update Book' %>
+<%= f.submit 'Update Book', class: 'btn btn-success' %>
+
+<%= link_to "Show", book_path(@books.id) %>
+<%= link_to "Back", books_path %>
 
 <% end %>

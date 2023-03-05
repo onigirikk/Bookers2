@@ -2,16 +2,35 @@
  <%= flash[:notice] %>
 </div>
 
+<div class="container">
+ <div class="row">
+  <div class="col-md-3">
+   <h2>User info</h2>
+   # ここにuser profile-imageを表示させる
+
+   <table class="tabe">
+    <tbody>
+     <tr></tr>
+     <tr>
+      <th>name</th><br>
+      <th>introduction</th>
+     </tr>
+    </tbody>
+   </table>
+  <div class="row">
+   # ここにuser editのボタンをつける
+  </div>
+
 <h1>New book</h1>
  <%= form_with model: Book.new do |f| %>
  
- <h4>Title</h4>
-  <%= f.text_field :title %>
+ <h7>Title</h7><br>
+  <%= f.text_field :title %><br>
   
- <h4>Opinion</h4>
-  <%= f.text_area :body %>
+ <h7>Opinion</h7><br>
+  <%= f.text_area :body %><br>
   
- <br> <%= f.submit 'Create Book' %>
+ <br> <%= f.submit 'Create Book', class: 'btn btn-success' %>
   
  <% end %>
 
@@ -19,10 +38,12 @@
 
 <div>
  <p><%= image_tag 'no_image.jpg' %></p>
+ <%= link_to book_path(@books.id) do %>
  <p><%= @books.title %></p>
+ <% end %>
  <p><%= @books.body %></p>
  
- <%= link_to "Edit", edit_book_path(@books.id) %>
+ <%= link_to "Edit", edit_book_path(@books.id), class: 'btn btn-success' %>
 
  </div>
  
