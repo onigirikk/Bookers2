@@ -1,5 +1,3 @@
-<h1>Editing Book</h1>
-
 <% if @books.errors.any? %>
  <%= @books.errors.count %>errors prohibited this obj from being saved:
  <ul>
@@ -9,12 +7,17 @@
  </ul>
 <% end %>
 
-<%= form_with model: @books do |f| %>
+<div class="container">
+ <div class="row">
+  <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+   
+   <h1>Editing Book</h1>
 
-<h4>Title</h4>
-<%= f.text_field :title %>
-<h4>Opinion</h4>
-<%= f.text_area :body %><br>
+<%= form_with model: @books do |f| %>
+      <h4>Title</h4>
+      <%= f.text_field :title %>
+      <h4>Opinion</h4>
+      <%= f.text_area :body %><br>
  
 <%= f.submit 'Update Book' %>
 
