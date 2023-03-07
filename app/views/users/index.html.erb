@@ -1,22 +1,2 @@
-<h2>User info</h2>
-<p>name<%= @user.name %></p>
-<p>introduction<%= @user.introduction %></p>
-<div class="row">
- <a class="btn btn-outline-secondary btn-sm btn-block " href="edit_user_path(@user.id)"><i class="fa-solid fa-user-gear"></i></a>
-</div>
-
-<%= render 'books/booklist', book: @book %>
-
-<h2>Books</h2>
- <% @books.each do |book| %>
- 
- <div>
-     <p><%= image_tag 'no_image.jpg' %></p>
-     <p><%= book.user.name %></p>
-     <%= link_to book_path(book.id) do %>
-      <p><%= book.title %></p>
-     <% end %>
-     <p><%= book.body %></p>
- </div>
- 
- <% end %>
+<%= render 'users/userlist', user: @user %>
+<%= render '/books/booklist', book: @book %>
