@@ -13,7 +13,9 @@
      <th>Opinion</th>
      <th colspan="3"></th>
    <tbody>
-      <span><%= link_to @user.name,"/users/#{@user.id}" %></span>
+      <%= link_to user_path(@user.id) do %>
+      <%= image_tag @user.get_profile_image(80,80) %>
+      <% end %>
       <span><%= link_to book.title,"/books/#{book.id}" %></span>
       <p><%= book.body %></p>
    </tbody>

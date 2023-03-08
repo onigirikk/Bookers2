@@ -6,10 +6,11 @@
    
    <table class="tabe">
        <tbody>
+           <th><%= image_tag user.get_profile_image(80,80) %></th>
            <th>name<%= user.name %></th>
            <th>introduction<%= user.introduction %></th>
             <div class="row">
-               <%= link_to edit_user_path(current_user), class: "btn btn-outline-secondary btn-sm btn-block" do %> 
+               <%= link_to edit_user_path(current_user), class: "btn btn-outline-secondary" do %> 
                <i class="fa-solid fa-user-gear"></i>
                <% end %>
         　 　</div>

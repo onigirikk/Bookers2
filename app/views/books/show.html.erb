@@ -4,14 +4,15 @@
 <h2>Book detail</h2>
 
 <div>
- <p><%= image_tag 'no_image.jpg' %></p>
- <%= link_to @books.user.name do %>
-  <p><%= @user.name %></p>
+ <p><%= image_tag @user.get_profile_image(80,80) %></p>
+ <%= link_to user_path(@user.id) do %>
+ <p><%= @user.name %></p>
  <% end %>
  <%= link_to book_path(@books.id) do %>
   <p><%= @books.title %></p>
  <% end %>
  <p><%= @books.body %></p>
+ 
  
  <% if @books.user == current_user %>
  <%= link_to "Edit", edit_book_path(@books.id), class: 'btn btn-success' %>
