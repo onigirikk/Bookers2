@@ -1,18 +1,38 @@
+  <div>
+      <%= flash[:notice] %>
+  </div>
+  
+  <% if @book.errors.any? %>
+   <%= @book.errors.count %>errors prohibitea this obj from being saved:
+   <ul>
+       <% @book.errors.full_messages.each do |message| %>
+   <li>
+    <%= message %>
+   </li>
+   <% end %>
+   </ul>
+  <% end %>
+  
+
 <div class="container">
  <div class="row">
   <div class="col-md-3">
    
    <h2>User info</h2>
    
-   <table class="tabe">
+   <table class="tabel">
        <tbody>
-           <th><%= image_tag user.get_profile_image(80,80) %></th>
-           <th>name<%= user.name %></th>
-           <th>introduction<%= user.introduction %></th>
+        <tr>
+          <td><%= image_tag @user.get_profile_image(80,80) %></td>
+          <td>name<%= user.name %></td>
+          <td>introduction<%= user.introduction %></td>
+         </tr>
             <div class="row">
+            
                <%= link_to edit_user_path(current_user), class: "btn btn-outline-secondary" do %> 
                <i class="fas fa-user-cog"></i>
                <% end %>
+               
         　 　</div>
     　　</tbody>
    </table>
