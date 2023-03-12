@@ -2,41 +2,34 @@
       <%= flash[:notice] %>
   </div>
   
-  <% if @book.errors.any? %>
-   <%= @book.errors.count %>errors prohibitea this obj from being saved:
+  <% if book.errors.any? %>
+   <%= book.errors.count %>errors prohibitea this obj from being saved:
    <ul>
-       <% @book.errors.full_messages.each do |message| %>
+       <% book.errors.full_messages.each do |message| %>
    <li>
     <%= message %>
    </li>
    <% end %>
    </ul>
   <% end %>
-  
 
-<div class="container">
- <div class="row">
-  <div class="col-md-3">
-   
-   <h2>User info</h2>
-   
-   <table class="tabel">
-       <tbody>
-        <tr>
-          <td><%= image_tag @user.get_profile_image(80,80) %></td>
-          <td>name<%= user.name %></td>
-          <td>introduction<%= user.introduction %></td>
-         </tr>
-            <div class="row">
-            
-               <%= link_to edit_user_path(current_user), class: "btn btn-outline-secondary" do %> 
-               <i class="fas fa-user-cog"></i>
-               <% end %>
-               
-        　 　</div>
-    　　</tbody>
-   </table>
+ <h2>User info</h2>
+ <%= image_tag user.get_profile_image(100,100) %>
+ <table class="tabel">
+  <tbody>
+   <tr>
+    <th>name</th>
+    <th><%= user.name %></th>
+   </tr>
+   <tr>
+    <th>introduction</th>
+    <th><%= user.introduction %></th>
+   </tr>
+  </tbody>
+ </table>
   
-  </div>
-  </div>
+  <div class="row">
+    <%= link_to edit_user_path(user), class: "btn btn-outline-secondary" do %>
+    <i class="fas fa-user-cog"></i>
+    <% end %>
   </div>
